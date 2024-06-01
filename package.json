@@ -1,0 +1,22 @@
+{
+  "name": "javascript-330-final",
+  "version": "1.0.0",
+  "description": "1.) This project will operate in a scenario where people want to keep track of their workout regime",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

@@ -1,3 +1,5 @@
+Update: I have a mongo connection and server connection with 2 out of 3 CRUD rotes and tests completed. All I have left to do is my last CRUD route and test that go with it
+
 1.) This project will operate in a scenario where people want to keep track of their workout regime
 
 2.) This project seeks to solve to help those keep track of their workout regimes for those who have a hard time remembering
