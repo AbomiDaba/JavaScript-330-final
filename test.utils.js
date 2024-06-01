@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const models = [
     require("./models/user"),
     require("./models/workout"),
-    // require("./models/sets"),
+    require("./models/set")
     ];
 
     module.exports = {};
