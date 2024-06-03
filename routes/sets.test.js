@@ -90,11 +90,11 @@ describe("/set", () => {
             const res = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + token0)
-            .send(workouts.map((i) => i._id));
+            .send(workouts.map((w) => w._id));
             expect(res.statusCode).toEqual(200);
             const storedSet = await Set.findOne().lean();
             expect(storedSet).toMatchObject({
-            workouts: workouts.map((i) => i._id),
+            workouts: workouts.map((w) => w._id),
             userId: (await User.findOne({ email: user0.email }).lean())._id,
             totalReps: 22,
             });
@@ -103,7 +103,7 @@ describe("/set", () => {
             const res = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + adminToken)
-            .send([workouts[1], workouts[1], workouts[0]].map((i) => i._id));
+            .send([workouts[1], workouts[1], workouts[0]].map((w) => w._id));
             expect(res.statusCode).toEqual(200);
             const storedSet = await Set.findOne().lean();
             expect(storedSet).toMatchObject({
@@ -116,7 +116,7 @@ describe("/set", () => {
             const res = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + adminToken)
-            .send([workouts[1], "5f1b8d9ca0ef055e6e5a1f6b"].map((i) => i._id));
+            .send([workouts[1], "5f1b8d9ca0ef055e6e5a1f6b"].map((w) => w._id));
             expect(res.statusCode).toEqual(400);
             const storedSet = await Set.findOne().lean();
             expect(storedSet).toBeNull();
@@ -128,12 +128,12 @@ describe("/set", () => {
             const res0 = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + token0)
-            .send([workouts[0], workouts[1], workouts[1]].map((i) => i._id));
+            .send([workouts[0], workouts[1], workouts[1]].map((w) => w._id));
             set0Id = res0.body._id;
             const res1 = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + adminToken)
-            .send([workouts[1]].map((i) => i._id));
+            .send([workouts[1]].map((w) => w._id));
             set1Id = res1.body._id;
         });
         it("should send 200 to normal user with their set", async () => {
@@ -191,7 +191,7 @@ describe("/set", () => {
             const res1 = await request(server)
             .post("/sets")
             .set("Authorization", "Bearer " + adminToken)
-            .send([workouts[1]].map((i) => i._id));
+            .send([workouts[1]].map((w) => w._id));
             set1Id = res1.body._id;
         });
         it("should send 200 to normal user with their one set", async () => {

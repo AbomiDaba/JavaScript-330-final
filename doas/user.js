@@ -10,6 +10,9 @@ module.exports.createUser = async (obj) => {
     } else {
         const hash = await bcrypt.hash(obj.password, 1);
         obj.password = hash;
+        if (obj.admin == true) {
+            return await User.create(obj);
+        }
         obj.admin = 'false';
     }
     
