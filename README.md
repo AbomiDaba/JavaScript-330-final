@@ -1,3 +1,6 @@
+Self-Evaluation: My aproach followed very closely to the structure of the homeworks. My approach was to keep the program simple for functionality so I can continue to build off of this project and make it greater. The project produced my expected results. All the routes worked as I intended. I will have to build a front-end portion of this project to make it usable for users. I plan to change some of the functionality to allow users to create their own workouts so that they can have a list of prefered workouts that may not be in the database already. I think that having admin users to build the database with workouts does not really work well. I think I will make this app subscription based instead. Overall I think this is a pretty good start for my app that I want to build upon in the future.
+
+
 Update: I have a mongo connection and server connection with 2 out of 3 CRUD rotes and tests completed. All I have left to do is my last CRUD route and test that go with it
 
 1.) This project will operate in a scenario where people want to keep track of their workout regime
