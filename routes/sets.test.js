@@ -202,9 +202,9 @@ describe("/set", () => {
             expect(res.statusCode).toEqual(200);
             expect(res.body).toMatchObject([
             {
-                workouts: [workouts[0]._id.toString(), workouts[1]._id.toString()],
-                userId: (await User.findOne({ email: user0.email }))._id.toString(),
                 totalReps: 22,
+                userId: (await User.findOne({ email: user0.email }))._id.toString(),
+                workouts: [workouts[0]._id.toString(), workouts[1]._id.toString()],
             },
             ]);
         });

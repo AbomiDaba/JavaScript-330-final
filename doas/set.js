@@ -18,8 +18,8 @@ module.exports.createSet = async (userid, workouts) => {
     
 }
 
-module.exports.getAllSets = async (userid) => {
-    const user = await User.findOne({ _id: userid });
+module.exports.getAllSets = async (userId) => {
+    const user = await User.findOne({ _id: userId });
     let isAdmin = false;
     if (user.admin) {
         isAdmin = true;
@@ -28,7 +28,9 @@ module.exports.getAllSets = async (userid) => {
     if (isAdmin) {
         return await Set.find();
     } else {
-        return await Set.find({ userId:userid });
+        return  await Set.aggregate([
+            {$match: { userId: user.id }},
+            ]);
         
     }
 }
